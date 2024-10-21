@@ -1,0 +1,34 @@
+version: "3"
+
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    volumes:
+      - ./prometheus/config:/etc/prometheus
+      - ./prometheus/data:/prometheus
+    command:
+      - "--web.enable-lifecycle --config.file=/etc/prometheus/prometheus.yml"
+    ports:
+      - "9090:9090"
+    networks:
+      - starlink-net
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana-oss:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    networks:
+      - starlink-net
+    volumes:
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/conf/:/var/lib/grafana
+    environment:
+      GF_INSTALL_PLUGINS: grafana-clock-panel,marcusolsson-json-datasource,fetzerch-sunandmoon-datasource
+    restart: unless-stopped
+
+networks:
+  starlink-net:
+    driver: bridge

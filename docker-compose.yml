@@ -1,6 +1,19 @@
 version: "3"
 
 services:
+  portainer:
+    image: portainer/portainer-ce:latest
+    privileged: true
+    ports:
+      - "8000:8000"
+      - "9443:9443"
+    volumes:
+      - "./portainer/data:/data"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    networks:
+      - starlink-net
+    restart: unless-stopped
+
   prometheus:
     image: prom/prometheus:latest
     container_name: prometheus

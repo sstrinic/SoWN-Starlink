@@ -3,12 +3,13 @@ version: "3"
 services:
   portainer:
     image: portainer/portainer-ce:latest
+    container_name: portainer
     privileged: true
     ports:
       - "8000:8000"
       - "9443:9443"
     volumes:
-      - "./portainer/data:/data"
+      - portainer-data:/data
       - "/var/run/docker.sock:/var/run/docker.sock"
     networks:
       - starlink-net
@@ -19,9 +20,8 @@ services:
     container_name: prometheus
     volumes:
       - ./prometheus/config:/etc/prometheus
-      - ./prometheus/data:/prometheus
-    command:
-      - "--web.enable-lifecycle --config.file=/etc/prometheus/prometheus.yml"
+      - prometheus-data:/prometheus
+    command: "--web.enable-lifecycle --config.file=/etc/prometheus/prometheus.yml"
     ports:
       - "9090:9090"
     networks:
@@ -37,10 +37,15 @@ services:
       - starlink-net
     volumes:
       - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
-      - ./grafana/conf/:/var/lib/grafana
+      - grafana-storage:/var/lib/grafana
     environment:
       GF_INSTALL_PLUGINS: grafana-clock-panel,marcusolsson-json-datasource,fetzerch-sunandmoon-datasource
     restart: unless-stopped
+
+volumes:
+  portainer-data:
+  prometheus-data:
+  grafana-storage:
 
 networks:
   starlink-net:

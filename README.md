@@ -22,10 +22,11 @@ By combining tools like Grafana, Prometheus, and custom Starlink exporters, the 
 ## Project Goals
 
 - **Raspberry Pi Setup** ✅
+- **Grafana and Prometheus Integration** ✅
+- **Starlink Exporter Setup** ✅
 - **Docker Compose Configuration**
-- **Grafana and Prometheus Integration**
-- **Starlink Exporter Setup**
 - **SpaceX API (v4) integration**
+- **Grafana dashboards**
 - **Wireshark Packet Analysis**
 - **Traceroute for Latency and Route Insights**
 

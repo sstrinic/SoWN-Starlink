@@ -1,0 +1,65 @@
+{
+    "uid": "starlink-monitoring",
+    "title": "Starlink Monitoring Dashboard",
+    "schemaVersion": 30,
+    "version": 1,
+    "panels": [
+      {
+        "type": "graph",
+        "title": "Latency (ms)",
+        "gridPos": { "x": 0, "y": 0, "w": 12, "h": 8 },
+        "targets": [
+          {
+            "expr": "starlink_latency_ms",
+            "legendFormat": "{{instance}}",
+            "refId": "A"
+          }
+        ],
+        "datasource": "Prometheus"
+      },
+      {
+        "type": "graph",
+        "title": "Download Speed (Mbps)",
+        "gridPos": { "x": 0, "y": 8, "w": 12, "h": 8 },
+        "targets": [
+          {
+            "expr": "starlink_download_speed_mbps",
+            "legendFormat": "{{instance}}",
+            "refId": "B"
+          }
+        ],
+        "datasource": "Prometheus"
+      },
+      {
+        "type": "graph",
+        "title": "Upload Speed (Mbps)",
+        "gridPos": { "x": 12, "y": 8, "w": 12, "h": 8 },
+        "targets": [
+          {
+            "expr": "starlink_upload_speed_mbps",
+            "legendFormat": "{{instance}}",
+            "refId": "C"
+          }
+        ],
+        "datasource": "Prometheus"
+      },
+      {
+        "type": "stat",
+        "title": "Uptime (Hours)",
+        "gridPos": { "x": 12, "y": 0, "w": 12, "h": 8 },
+        "targets": [
+          {
+            "expr": "starlink_uptime_hours",
+            "refId": "D"
+          }
+        ],
+        "datasource": "Prometheus"
+      }
+    ],
+    "time": {
+      "from": "now-1h",
+      "to": "now"
+    },
+    "refresh": "10s"
+  }
+  

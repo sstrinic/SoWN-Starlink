@@ -28,6 +28,24 @@ services:
       - starlink-net
     restart: unless-stopped
 
+  starlink-exporter:
+    image: ghcr.io/danopstech/starlink_exporter:latest
+    container_name: starlink-exporter
+    ports:
+      - "9817:9817"
+    networks:
+      - starlink-net
+    restart: unless-stopped
+
+  speedtest-exporter:
+    image: miguelndecarvalho/speedtest-exporter
+    container_name: speedtest-exporter
+    ports:
+      - "9798:9798"
+    networks:
+      - starlink-net
+    restart: unless-stopped
+
   grafana:
     image: grafana/grafana-oss:latest
     container_name: grafana
@@ -37,6 +55,7 @@ services:
       - starlink-net
     volumes:
       - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
       - grafana-storage:/var/lib/grafana
     environment:
       GF_INSTALL_PLUGINS: grafana-clock-panel,marcusolsson-json-datasource,fetzerch-sunandmoon-datasource

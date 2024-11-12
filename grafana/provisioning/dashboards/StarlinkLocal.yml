@@ -1,6 +1,6 @@
 apiVersion: 1
 providers:
-  - name: 'Speeeeeeeeed'
+  - name: 'Starlink Ours'
     orgId: 1
     folder: ''
     type: file
@@ -8,4 +8,4 @@ providers:
     editable: true
     updateIntervalSeconds: 30
     options:
-      path: /etc/grafana/provisioning/dashboards/Speedtest-Dash
+      path: /etc/grafana/provisioning/dashboards/StarlinkLocal

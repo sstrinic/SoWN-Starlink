@@ -1,0 +1,11 @@
+apiVersion: 1
+providers:
+  - name: 'Starlink Dane mix'
+    orgId: 1
+    type: file
+    folder: ''
+    disableDeletion: true
+    editable: false
+    allowUiUpdates: false
+    options:
+      path: /etc/grafana/provisioning/dashboards/Danop

@@ -38,10 +38,10 @@ services:
     restart: unless-stopped
 
   speedtest-exporter:
-    image: miguelndecarvalho/speedtest-exporter
+    image: ghcr.io/danopstech/speedtest_exporter:latest
     container_name: speedtest-exporter
     ports:
-      - "9798:9798"
+      - "9092:9090"
     networks:
       - starlink-net
     restart: unless-stopped
@@ -58,7 +58,7 @@ services:
       - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
       - grafana-storage:/var/lib/grafana
     environment:
-      GF_INSTALL_PLUGINS: grafana-clock-panel,marcusolsson-json-datasource,fetzerch-sunandmoon-datasource
+      GF_INSTALL_PLUGINS: grafana-clock-panel,marcusolsson-json-datasource,fetzerch-sunandmoon-datasource,ae3e-plotly-panel
     restart: unless-stopped
 
 volumes:

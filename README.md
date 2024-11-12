@@ -24,7 +24,7 @@ By combining tools like Grafana, Prometheus, and custom Starlink exporters, the 
 - **Raspberry Pi Setup** ✅
 - **Grafana and Prometheus Integration** ✅
 - **Starlink Exporter Setup** ✅
-- **Docker Compose Configuration**
+- **Docker Compose Configuration** ✅
 - **SpaceX API (v4) integration**
 - **Grafana dashboards**
 - **Wireshark Packet Analysis**

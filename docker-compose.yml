@@ -18,14 +18,25 @@ services:
   prometheus:
     image: prom/prometheus:latest
     container_name: prometheus
+    ports:
+      - "9090:9090"
     volumes:
       - ./prometheus/config:/etc/prometheus
       - prometheus-data:/prometheus
     command: "--web.enable-lifecycle --config.file=/etc/prometheus/prometheus.yml"
-    ports:
-      - "9090:9090"
     networks:
       - starlink-net
+    restart: unless-stopped
+
+  node-exporter:
+    image: quay.io/prometheus/node-exporter:latest
+    container_name: node-exporter
+    volumes:
+      - "/:/host:ro,rslave"
+    command:
+      - "--path.rootfs=/host"
+    pid: host
+    network_mode: host
     restart: unless-stopped
 
   starlink-exporter:
@@ -51,14 +62,14 @@ services:
     container_name: grafana
     ports:
       - "3000:3000"
-    networks:
-      - starlink-net
     volumes:
       - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
       - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
       - grafana-storage:/var/lib/grafana
     environment:
       GF_INSTALL_PLUGINS: grafana-clock-panel,marcusolsson-json-datasource,fetzerch-sunandmoon-datasource,ae3e-plotly-panel
+    networks:
+      - starlink-net
     restart: unless-stopped
 
 volumes:

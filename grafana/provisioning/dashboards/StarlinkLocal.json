@@ -18,7 +18,7 @@
     "editable": true,
     "fiscalYearStartMonth": 0,
     "graphTooltip": 0,
-    "id": 6,
+    "id": 4,
     "links": [],
     "panels": [
         {
@@ -181,7 +181,7 @@
                         "uid": "PBFA97CFB590B2093"
                     },
                     "editorMode": "code",
-                    "expr": "starlink_dish_pop_ping_latency_seconds{instance=\"starlink-exporter:9817\", job=\"starlink\"}",
+                    "expr": "starlink_dish_pop_ping_latency_seconds{instance=\"starlink-exporter:9817\", job=\"starlink-exporter\"}",
                     "legendFormat": "{{instance}}",
                     "range": true,
                     "refId": "A"
@@ -365,7 +365,7 @@
             "targets": [
                 {
                     "editorMode": "code",
-                    "expr": "starlink_dish_bore_sight_elevation_deg{instance=\"starlink-exporter:9817\", job=\"starlink\"}",
+                    "expr": "starlink_dish_bore_sight_elevation_deg{instance=\"starlink-exporter:9817\", job=\"starlink-exporter\"}",
                     "legendFormat": "__auto",
                     "range": true,
                     "refId": "A"
@@ -584,6 +584,6 @@
     "timezone": "",
     "title": "Starlink Monitoring Dashboard",
     "uid": "starlink-monitoring",
-    "version": 2,
+    "version": 1,
     "weekStart": ""
 }

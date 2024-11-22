@@ -10,7 +10,7 @@
   "editor.detectIndentation": false,
   "markdownlint.config": {
     "MD033": {
-      "allowed_elements": ["a", "img"]
+      "allowed_elements": ["a", "img", "tr", "td", "table"]
     }
   }
 }

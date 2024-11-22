@@ -76,6 +76,21 @@ Here, you’ll be able to monitor Starlink data through various pre-configured d
 - **Traceroute**: Measure the latency and route of packets through the Starlink network.
 - **Integration with SpaceX API**: Potential integration with SpaceX API for real-time satellite data.
 
+## Grafana Dashboards
+
+**Dashboards are not currently done and there are some bugs.**
+
+<table>
+  <tr>
+    <td><img src="./img/Dashboard-1.png" alt="Dashboard 1" style="width:100%;"></td>
+    <td><img src="./img/Dashboard-2.png" alt="Dashboard 2" style="width:100%;"></td>
+  </tr>
+  <tr>
+    <td><img src="./img/Dashboard-3.png" alt="Dashboard 3" style="width:100%;"></td>
+    <td><img src="./img/Dashboard-4.png" alt="Dashboard 4" style="width:100%;"></td>
+  </tr>
+</table>
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

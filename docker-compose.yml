@@ -26,6 +26,8 @@ services:
     command: "--web.enable-lifecycle --config.file=/etc/prometheus/prometheus.yml"
     networks:
       - starlink-net
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     restart: unless-stopped
 
   node-exporter:
@@ -49,10 +51,10 @@ services:
     restart: unless-stopped
 
   speedtest-exporter:
-    image: ghcr.io/danopstech/speedtest_exporter:latest
+    image: miguelndecarvalho/speedtest-exporter:latest
     container_name: speedtest-exporter
     ports:
-      - "9092:9090"
+      - "9798:9798"
     networks:
       - starlink-net
     restart: unless-stopped
@@ -67,7 +69,48 @@ services:
       - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
       - grafana-storage:/var/lib/grafana
     environment:
-      GF_INSTALL_PLUGINS: grafana-clock-panel,marcusolsson-json-datasource,fetzerch-sunandmoon-datasource,ae3e-plotly-panel
+      GF_INSTALL_PLUGINS: grafana-clock-panel,marcusolsson-json-datasource,ae3e-plotly-panel
+    env_file:
+      - default.env
+    networks:
+      - starlink-net
+    restart: unless-stopped
+
+  influxdb:
+    image: influxdb:1.8
+    container_name: influxdb
+    ports:
+      - "8086:8086"
+    volumes:
+      - influxdb-storage:/var/lib/influxdb
+    env_file:
+      - default.env
+    networks:
+      - starlink-net
+    restart: unless-stopped
+
+  grpc:
+    image: sponsianus/starlink-grpc-tools
+    container_name: grpc
+    command: "dish_grpc_influx.py -t 1 -a -v status obstruction_detail alert_detail ping_drop ping_run_length ping_latency ping_loaded_latency usage bulk_history"
+    depends_on:
+      - influxdb
+    env_file:
+      - default.env
+    tty: true
+    networks:
+      - starlink-net
+    restart: unless-stopped
+
+  netstats:
+    image: sponsianus/netstats
+    container_name: netstats
+    volumes:
+      - ./telegraf/netstats-provisioning:/etc/telegraf
+    depends_on:
+      - influxdb
+    env_file:
+      - default.env
     networks:
       - starlink-net
     restart: unless-stopped
@@ -76,6 +119,7 @@ volumes:
   portainer-data:
   prometheus-data:
   grafana-storage:
+  influxdb-storage:
 
 networks:
   starlink-net:

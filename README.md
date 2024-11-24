@@ -50,6 +50,7 @@ This setup will initialize the required services, allowing you to monitor and an
   - Starlink | Standard [(link)](https://api.starlink.com/public-files/specification_sheet_standard.pdf)
     - Satellite dish with kickstand
     - Router
+      
       - 802.11 a/b/g/n/ac/ax
       - WPA2
       - Two (2) Latching Ethernet LAN ports with removable cover

@@ -35,6 +35,11 @@ By combining tools like Grafana, Prometheus, and custom Starlink exporters, the 
 To get started with this project, ensure that Docker and Docker Compose are installed on your system.  
 This setup will initialize the required services, allowing you to monitor and analyze Starlink data.
 
+### Hardware
+
+- [Raspberry Pi 5](https://datasheets.raspberrypi.com/rpi5/raspberry-pi-5-product-brief.pdf)
+- [Starlink | Standard](https://api.starlink.com/public-files/specification_sheet_standard.pdf)
+
 ### Prerequisites
 
 - **Docker** and **Docker Compose**

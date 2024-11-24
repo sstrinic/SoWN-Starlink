@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+      "esbenp.prettier-vscode",
+      "yzhang.markdown-all-in-one",
+      "pkief.material-icon-theme",
+      "ms-python.black-formatter",
+      "redhat.vscode-yaml"
+    ]
+  }
+  

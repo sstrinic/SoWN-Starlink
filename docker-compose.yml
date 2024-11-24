@@ -1,0 +1,126 @@
+version: "3"
+
+services:
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+    privileged: true
+    ports:
+      - "8000:8000"
+      - "9443:9443"
+    volumes:
+      - portainer-data:/data
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    networks:
+      - starlink-net
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/config:/etc/prometheus
+      - prometheus-data:/prometheus
+    command: "--web.enable-lifecycle --config.file=/etc/prometheus/prometheus.yml"
+    networks:
+      - starlink-net
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+
+  node-exporter:
+    image: quay.io/prometheus/node-exporter:latest
+    container_name: node-exporter
+    volumes:
+      - "/:/host:ro,rslave"
+    command:
+      - "--path.rootfs=/host"
+    pid: host
+    network_mode: host
+    restart: unless-stopped
+
+  starlink-exporter:
+    image: ghcr.io/danopstech/starlink_exporter:latest
+    container_name: starlink-exporter
+    ports:
+      - "9817:9817"
+    networks:
+      - starlink-net
+    restart: unless-stopped
+
+  speedtest-exporter:
+    image: miguelndecarvalho/speedtest-exporter:latest
+    container_name: speedtest-exporter
+    ports:
+      - "9798:9798"
+    networks:
+      - starlink-net
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana-oss:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+      - grafana-storage:/var/lib/grafana
+    environment:
+      GF_INSTALL_PLUGINS: grafana-clock-panel,marcusolsson-json-datasource,ae3e-plotly-panel
+    env_file:
+      - default.env
+    networks:
+      - starlink-net
+    restart: unless-stopped
+
+  influxdb:
+    image: influxdb:1.8
+    container_name: influxdb
+    ports:
+      - "8086:8086"
+    volumes:
+      - influxdb-storage:/var/lib/influxdb
+    env_file:
+      - default.env
+    networks:
+      - starlink-net
+    restart: unless-stopped
+
+  grpc:
+    image: sponsianus/starlink-grpc-tools
+    container_name: grpc
+    command: "dish_grpc_influx.py -t 1 -a -v status obstruction_detail alert_detail ping_drop ping_run_length ping_latency ping_loaded_latency usage bulk_history"
+    depends_on:
+      - influxdb
+    env_file:
+      - default.env
+    tty: true
+    networks:
+      - starlink-net
+    restart: unless-stopped
+
+  netstats:
+    image: sponsianus/netstats
+    container_name: netstats
+    volumes:
+      - ./telegraf/netstats-provisioning:/etc/telegraf
+    depends_on:
+      - influxdb
+    env_file:
+      - default.env
+    networks:
+      - starlink-net
+    restart: unless-stopped
+
+volumes:
+  portainer-data:
+  prometheus-data:
+  grafana-storage:
+  influxdb-storage:
+
+networks:
+  starlink-net:
+    driver: bridge

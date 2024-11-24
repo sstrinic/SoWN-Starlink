@@ -59,7 +59,7 @@ This setup will initialize the required services, allowing you to monitor and an
 - Software
 
   - Raspberry Pi OS
-    - 32-bit System
+    - 64-bit System
     - Kernel version 6.6
 
   - **Docker** and **Docker Compose**

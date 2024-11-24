@@ -54,7 +54,7 @@ This setup will initialize the required services, allowing you to monitor and an
       - Connect up to 235 devices
 
 - Software
-  - Raspberry Pi OS with desktop
+  - Raspberry Pi OS
     - 32-bit System
     - Kernel version 6.6
   - **Docker** and **Docker Compose**

@@ -35,16 +35,31 @@ By combining tools like Grafana, Prometheus, and custom Starlink exporters, the 
 To get started with this project, ensure that Docker and Docker Compose are installed on your system.  
 This setup will initialize the required services, allowing you to monitor and analyze Starlink data.
 
-### Hardware
-
-- [Raspberry Pi 5](https://datasheets.raspberrypi.com/rpi5/raspberry-pi-5-product-brief.pdf)
-- [Starlink | Standard](https://api.starlink.com/public-files/specification_sheet_standard.pdf)
-
 ### Prerequisites
 
-- **Docker** and **Docker Compose**
-- A **Raspberry Pi** (for certain parts of the project)
-- Basic knowledge of networking tools like **Wireshark** and **Traceroute**
+- Hardware
+  - Raspberry Pi 5 [(link)](https://datasheets.raspberrypi.com/rpi5/raspberry-pi-5-product-brief.pdf)
+    - 2.4GHz quad-core processor
+    - 4GB RAM
+    - Dual-band 802.11ac Wi-Fi
+    - Bluetooth 5.0 / Bluetooth Low Energy (BLE)
+    - 2 × USB 3.0 ports, supporting simultaneous 5Gbps operation
+    - 2 × USB 2.0 ports
+  - Starlink | Standard [(link)](https://api.starlink.com/public-files/specification_sheet_standard.pdf)
+    - Satellite dish with kickstand
+    - Router
+      - 802.11 a/b/g/n/ac/ax
+      - WPA2
+      - Two (2) Latching Ethernet LAN ports with removable cover
+      - Connect up to 235 devices
+
+- Software
+  - Raspberry Pi OS with desktop
+    - 32-bit System
+    - Kernel version 6.6
+  - **Docker** and **Docker Compose**
+  - **Grafana** with **Prometheus** database
+  - Basic knowledge of networking tools like **Wireshark** and **Traceroute**
 
 ### Installation
 

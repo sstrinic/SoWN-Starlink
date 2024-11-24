@@ -38,6 +38,7 @@ This setup will initialize the required services, allowing you to monitor and an
 ### Prerequisites
 
 - Hardware
+
   - Raspberry Pi 5 [(link)](https://datasheets.raspberrypi.com/rpi5/raspberry-pi-5-product-brief.pdf)
     - 2.4GHz quad-core processor
     - 4GB RAM
@@ -45,6 +46,7 @@ This setup will initialize the required services, allowing you to monitor and an
     - Bluetooth 5.0 / Bluetooth Low Energy (BLE)
     - 2 × USB 3.0 ports, supporting simultaneous 5Gbps operation
     - 2 × USB 2.0 ports
+
   - Starlink | Standard [(link)](https://api.starlink.com/public-files/specification_sheet_standard.pdf)
     - Satellite dish with kickstand
     - Router
@@ -54,9 +56,11 @@ This setup will initialize the required services, allowing you to monitor and an
       - Connect up to 235 devices
 
 - Software
+
   - Raspberry Pi OS
     - 32-bit System
     - Kernel version 6.6
+
   - **Docker** and **Docker Compose**
   - **Grafana** with **Prometheus** database
   - Basic knowledge of networking tools like **Wireshark** and **Traceroute**

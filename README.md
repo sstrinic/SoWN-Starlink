@@ -12,19 +12,21 @@ The project aims to analyze Starlink's performance and network behavior through 
 The goal of this project is to set up a robust analysis and monitoring environment for Starlink.  
 By combining tools like Grafana, Prometheus, and custom Starlink exporters, the project provides insights into Starlink's network traffic, latency, stability, and security.
 
+![SoWN-Starlink-scheme](https://github.com/user-attachments/assets/0e2a291e-b907-4983-b547-9eac1a38a81b)
+
 ### Features
 
 - **Real-time Starlink Data Dashboards**: Visualize key metrics of Starlink's network performance.
-- **Automated Monitoring Setup**: Easily deploy Grafana, Prometheus and Portainer using Docker compose.
+- **Automated Monitoring Setup**: Easily deploy Grafana, Prometheus, Telegraf and Portainer using Docker compose.
 - **Network Traffic Analysis**: Capture and analyze packet data using Wireshark.
 - **SpaceX API Integration**: Research and possibly integrate SpaceX's API (v4) for additional telemetry.
 
 ## Project Goals
 
-- **Raspberry Pi Setup** ✅
-- **Grafana and Prometheus Integration** ✅
-- **Starlink Exporter Setup** ✅
-- **Docker Compose Configuration** ✅
+- ✅ **Raspberry Pi Setup**
+- ✅ **Grafana and Prometheus Integration**
+- ✅ **Starlink Exporter Setup**
+- ✅ **Docker Compose Configuration**
 - **SpaceX API (v4) integration**
 - **Grafana dashboards**
 - **Wireshark Packet Analysis**
@@ -37,7 +39,7 @@ This setup will initialize the required services, allowing you to monitor and an
 
 ### Prerequisites
 
-- Hardware
+- **Hardware**
 
   - Raspberry Pi 5 [(link)](https://datasheets.raspberrypi.com/rpi5/raspberry-pi-5-product-brief.pdf)
     - 2.4GHz quad-core processor
@@ -50,21 +52,15 @@ This setup will initialize the required services, allowing you to monitor and an
   - Starlink | Standard [(link)](https://api.starlink.com/public-files/specification_sheet_standard.pdf)
     - Satellite dish with kickstand
     - Router
-      
-      - 802.11 a/b/g/n/ac/ax
-      - WPA2
-      - Two (2) Latching Ethernet LAN ports with removable cover
-      - Connect up to 235 devices
 
-- Software
+      - 802.11 a/b/g/n/ac/ax
+      - Two (2) Latching Ethernet LAN ports with removable cover
+
+- **Software**
 
   - Raspberry Pi OS
-    - 64-bit System
-    - Kernel version 6.6
-
   - **Docker** and **Docker Compose**
-  - **Grafana** with **Prometheus** database
-  - Basic knowledge of networking tools like **Wireshark** and **Traceroute**
+  - Networking tools **Wireshark** and **Traceroute**
 
 ### Installation
 

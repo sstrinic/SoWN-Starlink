@@ -12,7 +12,9 @@ The project aims to analyze Starlink's performance and network behavior through 
 The goal of this project is to set up a robust analysis and monitoring environment for Starlink.  
 By combining tools like Grafana, Prometheus, and custom Starlink exporters, the project provides insights into Starlink's network traffic, latency, stability, and security.
 
-<img src="./img/diagram.png" alt="diagram" style="width:100%;">
+<div align="center">
+  <img src="./img/diagram.png" alt="diagram" style="width:80%;">
+</div>
 
 ### Features
 

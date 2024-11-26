@@ -12,7 +12,7 @@ The project aims to analyze Starlink's performance and network behavior through 
 The goal of this project is to set up a robust analysis and monitoring environment for Starlink.  
 By combining tools like Grafana, Prometheus, and custom Starlink exporters, the project provides insights into Starlink's network traffic, latency, stability, and security.
 
-![SoWN-Starlink-scheme](https://github.com/user-attachments/assets/0e2a291e-b907-4983-b547-9eac1a38a81b)
+<img src="./img/diagram.png" alt="diagram" style="width:100%;">
 
 ### Features
 
@@ -67,8 +67,8 @@ This setup will initialize the required services, allowing you to monitor and an
 Clone the repository:
 
 ```bash
-git clone https://github.com/sstrinic/SoWN-starlink.git
-cd SoWN-starlink
+git clone https://github.com/sstrinic/SoWN-Starlink.git
+cd SoWN-Starlink
 ```
 
 ### Setup

@@ -33,6 +33,13 @@ By combining tools like Grafana, Prometheus, and custom Starlink exporters, the 
 - **Grafana dashboards**
 - **Wireshark Packet Analysis**
 - **Traceroute for Latency and Route Insights**
+- **Nmap analysis**
+
+## Encountered Problems
+
+- **Starlink Exporter project abandoned**  
+    Some crucial data, such as the Cell ID, is missing—likely due to issues with gRPC or ProtoBuffer.  
+    Combining data from the SpaceX API and Satellite ID is not possible at the time of writing.
 
 ## Getting Started
 
@@ -62,7 +69,7 @@ This setup will initialize the required services, allowing you to monitor and an
 
   - Raspberry Pi OS
   - **Docker** and **Docker Compose**
-  - Networking tools **Wireshark** and **Traceroute**
+  - Networking tools **Wireshark**, **Traceroute** and **Nmap**
 
 ### Installation
 
@@ -97,6 +104,7 @@ Here, you’ll be able to monitor Starlink data through various pre-configured d
 - **Grafana**: Visualize real-time network performance, latency, and other metrics for Starlink.
 - **Wireshark**: Capture and analyze Starlink packet data to examine security and performance.
 - **Traceroute**: Measure the latency and route of packets through the Starlink network.
+- **Nmap**: Scan and map the Starlink network to identify active devices, open ports, and potential vulnerabilities.  
 - **Integration with SpaceX API**: Potential integration with SpaceX API for real-time satellite data.
 
 ## Grafana Dashboards

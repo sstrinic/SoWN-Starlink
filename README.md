@@ -29,10 +29,11 @@ By combining tools like Grafana, Prometheus, and custom Starlink exporters, the 
 - ✅ **Grafana and Prometheus Integration**
 - ✅ **Starlink Exporter Setup**
 - ✅ **Docker Compose Configuration**
+- ✅ **Wireshark Packet Analysis**
+- ✅ **Traceroute for Latency and Route Insights**
 - **SpaceX API (v4) integration**
 - **Grafana dashboards**
-- **Wireshark Packet Analysis**
-- **Traceroute for Latency and Route Insights**
+- **Remote VPN access with Tailscale**
 - **Nmap analysis**
 
 ## Encountered Problems

@@ -7,13 +7,12 @@ datasources:
     isDefault: true
     jsonData:
       httpMethod: GET
-  
+
   - name: SpaceXApi
     type: JSON API
-    access: proxy
     url: "https://api.spacexdata.com/v4"
 
-  - name: Netstats
+  - name: netstats
     type: influxdb
     access: proxy
     database: netstats
@@ -23,7 +22,7 @@ datasources:
     jsonData:
       httpMode: GET
 
-  - name: Starlinkstats
+  - name: starlinkstats
     type: influxdb
     access: proxy
     database: starlinkstats

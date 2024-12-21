@@ -24,7 +24,7 @@
       {
         "datasource": {
           "type": "marcusolsson-json-datasource",
-          "uid": "de5qtgview3k0d"
+          "uid": "P6F2F3C7BB50169BA"
         },
         "fieldConfig": {
           "defaults": {},
@@ -52,7 +52,7 @@
             "cacheDurationSeconds": 300,
             "datasource": {
               "type": "marcusolsson-json-datasource",
-              "uid": "de5qtgview3k0d"
+              "uid": "P6F2F3C7BB50169BA"
             },
             "fields": [
               {
@@ -71,7 +71,7 @@
       {
         "datasource": {
           "type": "marcusolsson-json-datasource",
-          "uid": "de5qtgview3k0d"
+          "uid": "P6F2F3C7BB50169BA"
         },
         "fieldConfig": {
           "defaults": {
@@ -122,7 +122,7 @@
             "cacheDurationSeconds": 300,
             "datasource": {
               "type": "marcusolsson-json-datasource",
-              "uid": "de5qtgview3k0d"
+              "uid": "P6F2F3C7BB50169BA"
             },
             "fields": [
               {
@@ -143,7 +143,7 @@
       {
         "datasource": {
           "type": "marcusolsson-json-datasource",
-          "uid": "de5qtgview3k0d"
+          "uid": "P6F2F3C7BB50169BA"
         },
         "fieldConfig": {
           "defaults": {
@@ -193,7 +193,7 @@
             "cacheDurationSeconds": 300,
             "datasource": {
               "type": "marcusolsson-json-datasource",
-              "uid": "de5qtgview3k0d"
+              "uid": "P6F2F3C7BB50169BA"
             },
             "fields": [
               {
@@ -214,7 +214,7 @@
       {
         "datasource": {
           "type": "marcusolsson-json-datasource",
-          "uid": "de5qtgview3k0d"
+          "uid": "P6F2F3C7BB50169BA"
         },
         "fieldConfig": {
           "defaults": {
@@ -267,7 +267,7 @@
             "cacheDurationSeconds": 300,
             "datasource": {
               "type": "marcusolsson-json-datasource",
-              "uid": "de5qtgview3k0d"
+              "uid": "P6F2F3C7BB50169BA"
             },
             "fields": [
               {
@@ -303,7 +303,7 @@
       {
         "datasource": {
           "type": "marcusolsson-json-datasource",
-          "uid": "de5qtgview3k0d"
+          "uid": "P6F2F3C7BB50169BA"
         },
         "fieldConfig": {
           "defaults": {
@@ -359,7 +359,7 @@
             "cacheDurationSeconds": 300,
             "datasource": {
               "type": "marcusolsson-json-datasource",
-              "uid": "de5qtgview3k0d"
+              "uid": "P6F2F3C7BB50169BA"
             },
             "fields": [
               {

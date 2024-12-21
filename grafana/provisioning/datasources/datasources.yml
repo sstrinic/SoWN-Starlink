@@ -9,7 +9,8 @@ datasources:
       httpMethod: GET
 
   - name: SpaceXApi
-    type: JSON API
+    type: marcusolsson-json-datasource
+    access: proxy
     url: "https://api.spacexdata.com/v4"
 
   - name: netstats

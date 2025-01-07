@@ -33,8 +33,8 @@ By combining tools like Grafana, Prometheus, and custom Starlink exporters, the 
 - ✅ **Traceroute for Latency and Route Insights**
 - ✅ **SpaceX API (v4) integration**
 - ✅ **Grafana dashboards**
-- **Remote VPN access with Tailscale**
-- **Nmap analysis**
+- ✅ **Remote VPN access with Tailscale**
+- ✅ **Nmap analysis**
 
 ## Encountered Problems
 
@@ -53,7 +53,7 @@ This setup will initialize the required services, allowing you to monitor and an
 
   - Raspberry Pi 5 [(link)](https://datasheets.raspberrypi.com/rpi5/raspberry-pi-5-product-brief.pdf)
     - 2.4GHz quad-core processor
-    - 4GB RAM
+    - 8GB RAM
     - Dual-band 802.11ac Wi-Fi
     - Bluetooth 5.0 / Bluetooth Low Energy (BLE)
     - 2 × USB 3.0 ports, supporting simultaneous 5Gbps operation
@@ -70,7 +70,7 @@ This setup will initialize the required services, allowing you to monitor and an
 
   - Raspberry Pi OS
   - **Docker** and **Docker Compose**
-  - Networking tools **Wireshark**, **Traceroute** and **Nmap**
+  - Networking tools **Wireshark**, **Traceroute** and **Zenmap**
 
 ### Installation
 

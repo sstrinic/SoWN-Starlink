@@ -38,7 +38,7 @@ By combining tools like Grafana, Prometheus, and custom Starlink exporters, the 
 
 ## Encountered Problems
 
-- **Starlink Exporter project abandoned**  
+- **Starlink Exporter project abandoned**
     Some crucial data, such as the Cell ID, is missing—likely due to issues with gRPC or ProtoBuffer.  
     Combining data from the SpaceX API and Satellite ID is not possible at the time of writing.
 
@@ -98,14 +98,14 @@ cd SoWN-Starlink
 ### Accessing the Dashboards
 
 Once the services are up, you can access Grafana at `http://localhost:3000`.  
-Here, you’ll be able to monitor Starlink data through various pre-configured dashboards.
+Here, you'll be able to monitor Starlink data through various pre-configured dashboards.
 
 ## Usage
 
 - **Grafana**: Visualize real-time network performance, latency, and other metrics for Starlink.
 - **Wireshark**: Capture and analyze Starlink packet data to examine security and performance.
 - **Traceroute**: Measure the latency and route of packets through the Starlink network.
-- **Nmap**: Scan and map the Starlink network to identify active devices, open ports, and potential vulnerabilities.  
+- **Nmap**: Scan and map the Starlink network to identify active devices, open ports, and potential vulnerabilities.
 - **Integration with SpaceX API**: Potential integration with SpaceX API for real-time satellite data.
 
 ## Grafana Dashboards
@@ -120,6 +120,14 @@ Here, you’ll be able to monitor Starlink data through various pre-configured d
   <tr>
     <td><img src="./img/Dashboard-3.png" alt="Dashboard 3" style="width:100%;"></td>
     <td><img src="./img/Dashboard-4.png" alt="Dashboard 4" style="width:100%;"></td>
+  </tr>
+  <tr>
+    <td><img src="./img/Dashboard-5.png" alt="Dashboard 3" style="width:100%;"></td>
+    <td><img src="./img/Dashboard-6.png" alt="Dashboard 4" style="width:100%;"></td>
+  </tr>
+  <tr>
+    <td><img src="./img/Dashboard-7.png" alt="Dashboard 3" style="width:100%;"></td>
+    <td><img src="./img/Dashboard-8.png" alt="Dashboard 4" style="width:100%;"></td>
   </tr>
 </table>
 

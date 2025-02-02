@@ -110,8 +110,6 @@ Here, you'll be able to monitor Starlink data through various pre-configured das
 
 ## Grafana Dashboards
 
-**Dashboards are not currently done and there are some bugs.**
-
 <table>
   <tr>
     <td><img src="./img/Dashboard-1.png" alt="Dashboard 1" style="width:100%;"></td>
